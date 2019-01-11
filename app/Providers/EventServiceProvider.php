@@ -13,7 +13,7 @@ final class EventServiceProvider extends ServiceProvider
     /**
      * The event listener mappings for the application.
      *
-     * @var [string[string]][]
+     * @var array<array<string>>
      */
     protected $listen = [
         Registered::class => [SendEmailVerificationNotification::class],

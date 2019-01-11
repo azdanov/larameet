@@ -29,24 +29,9 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 final class Kernel extends HttpKernel
 {
     /**
-     * The application's global HTTP middleware stack.
-     *
-     * These middleware are run during every request to your application.
-     *
-     * @var string[]
-     */
-    protected $middleware = [
-        CheckForMaintenanceMode::class,
-        ValidatePostSize::class,
-        TrimStrings::class,
-        ConvertEmptyStringsToNull::class,
-        TrustProxies::class,
-    ];
-
-    /**
      * The application's route middleware groups.
      *
-     * @var string[]
+     * @var array<array<string>>
      */
     protected $middlewareGroups = [
         'web' => [
@@ -60,6 +45,21 @@ final class Kernel extends HttpKernel
         ],
 
         'api' => ['throttle:60,1', 'bindings'],
+    ];
+
+    /**
+     * The application's global HTTP middleware stack.
+     *
+     * These middleware are run during every request to your application.
+     *
+     * @var string[]
+     */
+    protected $middleware = [
+        CheckForMaintenanceMode::class,
+        ValidatePostSize::class,
+        TrimStrings::class,
+        ConvertEmptyStringsToNull::class,
+        TrustProxies::class,
     ];
 
     /**
