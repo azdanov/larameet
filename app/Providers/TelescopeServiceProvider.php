@@ -10,7 +10,7 @@ use Laravel\Telescope\Telescope;
 use Laravel\Telescope\TelescopeApplicationServiceProvider;
 use function in_array;
 
-class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
+final class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 {
     /**
      * Register any application services.
