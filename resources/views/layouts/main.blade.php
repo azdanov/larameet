@@ -10,17 +10,24 @@
     {!! Html::script('js/app.js', ['defer']) !!}
 </head>
 
-<body>
-<div>
-    @yield('content')
-</div>
+<body class="min-h-screen flex flex-col font-sans">
+@include('partials._menu')
 
-<div>
-    @section('advertisement')
-        <p>Buy LaraMeet swag from our store!</p>
-    @show
-</div>
+<main class="flex-grow">
+    <div class="p-4 bg-indigo-light text-center shadow">
+        <div class="container mx-auto text-indigo-lightest">
+            @section('heading')
+                <h1 class="text-white">LaraMeet</h1>
+            @show
+        </div>
+    </div>
 
+    <div class="container mx-auto">
+        @yield('content')
+    </div>
+</main>
+
+@include('partials._footer')
 </body>
 
 </html>

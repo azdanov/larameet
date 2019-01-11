@@ -1,11 +1,13 @@
 @extends('layouts.main')
 
-@section('content')
-    <h1>LaraMeet Where Finding Buddies Is Easy.</h1>
-    <p>Meet, chat, learn, and have fun with new acquaintances from your city.</p>
+@section('heading')
+    <div class="leading-normal">
+        <h1 class="text-white">LaraMeet ⎯ Finding Buddies Made Easy.</h1>
+        <p class="text-lg">Meet, chat, learn, and have fun with new acquaintances from your city.</p>
+    </div>
 @endsection
 
-@section('advertisement')
-    @parent
-    <p>LaraMeet members will receive a 15% off coupon at a local coffee shop!</p>
+@section('content')
+    Welcome to LaraMeet. A list of meetups will be available soon.
 @endsection
+

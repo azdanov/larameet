@@ -1,7 +1,16 @@
+@extends('layouts.main')
+
 @php
-/* @var string[] $events */
+    /* @var string[] $events */
 @endphp
 
-<table>
-    @each('partials._row', $events, 'event')
-</table>
+
+@section('heading')
+    <h1 class="text-white">Events</h1>
+@endsection
+
+@section('content')
+    <table>
+        @each('partials._row', $events, 'event')
+    </table>
+@endsection
