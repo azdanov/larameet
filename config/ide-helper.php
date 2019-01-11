@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
+use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Session\Store;
 
 return [
@@ -85,7 +86,6 @@ return [
 
     'model_locations' => ['app'],
 
-
     /*
     |--------------------------------------------------------------------------
     | Extra classes
@@ -96,7 +96,7 @@ return [
     */
 
     'extra' => [
-        'Eloquent' => [\Illuminate\Database\Eloquent\Builder::class, Builder::class],
+        'Eloquent' => [EloquentBuilder::class, QueryBuilder::class],
         'Session' => [Store::class],
     ],
 

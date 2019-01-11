@@ -6,9 +6,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Validator as ValidatorFacade;
 
 final class RegisterController extends Controller
 {
@@ -27,9 +28,9 @@ final class RegisterController extends Controller
      *
      * @param  mixed[] $data
      */
-    protected function validator(array $data): \Illuminate\Contracts\Validation\Validator
+    protected function validator(array $data): Validator
     {
-        return Validator::make($data, [
+        return ValidatorFacade::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
