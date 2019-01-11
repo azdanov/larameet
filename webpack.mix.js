@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,10 +11,9 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js');
+mix.js("resources/js/app.js", "public/js");
 
-mix.sass('resources/sass/app.scss', 'public/css');
-
+mix.css("resources/sass/app.scss", "public/css");
 
 /*
 |-----------------------------------------------------------------------
@@ -25,10 +24,10 @@ mix.sass('resources/sass/app.scss', 'public/css');
 | Proxy specifies the location where the app is located.
 */
 mix.browserSync({
-  proxy: 'https://localhost',
-  host: 'localhost',
-  open: false,
-  watchOptions: {
-    usePolling: true
-  }
+    proxy: "http://larameet.test",
+    host: "localhost",
+    open: false,
+    watchOptions: {
+        usePolling: true
+    }
 });
