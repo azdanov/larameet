@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Log Channel
@@ -74,9 +75,7 @@ return [
             'driver' => 'monolog',
             'handler' => StreamHandler::class,
             'formatter' => env('LOG_STDERR_FORMATTER'),
-            'with' => [
-                'stream' => 'php://stderr',
-            ],
+            'with' => ['stream' => 'php://stderr'],
         ],
 
         'syslog' => [
@@ -89,5 +88,4 @@ return [
             'level' => 'debug',
         ],
     ],
-
 ];

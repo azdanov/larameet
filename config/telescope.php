@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 use Laravel\Telescope\Http\Middleware\Authorize;
 use Laravel\Telescope\Watchers;
 
 return [
-
     'path' => 'telescope',
 
     /*
@@ -50,10 +51,7 @@ return [
     |
     */
 
-    'middleware' => [
-        'web',
-        Authorize::class,
-    ],
+    'middleware' => ['web', Authorize::class],
 
     /*
     |--------------------------------------------------------------------------
@@ -66,13 +64,9 @@ return [
     |
     */
 
-    'ignore_paths' => [
-        //
-    ],
+    'ignore_paths' => [],
 
-    'ignore_commands' => [
-        //
-    ],
+    'ignore_commands' => [],
 
     /*
     |--------------------------------------------------------------------------
