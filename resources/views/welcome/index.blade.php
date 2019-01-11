@@ -1,18 +1,11 @@
-<!doctype html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome to LaraMeet</title>
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-</head>
+@section('content')
+    <h1>LaraMeet Where Finding Buddies Is Easy.</h1>
+    <p>Meet, chat, learn, and have fun with new acquaintances from your city.</p>
+@endsection
 
-<body>
-
-<h1>Welcome to LaraMeet</h1>
-
-<script src="{{ mix('js/app.js') }}"></script>
-
-</body>
-
-</html>
+@section('advertisement')
+    @parent
+    <p>LaraMeet members will receive a 15% off coupon at a local coffee shop!</p>
+@endsection
