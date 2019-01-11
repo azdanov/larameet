@@ -11,3 +11,6 @@ npm-debug.log
 yarn-error.log
 .env
 phpmetrics
+public/js/
+public/mix-manifest.json
+yarn.lock
