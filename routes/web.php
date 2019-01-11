@@ -13,6 +13,4 @@ declare(strict_types=1);
 |
 */
 
-Route::get('/', static function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
