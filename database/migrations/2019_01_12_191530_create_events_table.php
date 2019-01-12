@@ -16,7 +16,7 @@ final class CreateEventsTable extends Migration
             $table->string('venue');
             $table->string('city');
             $table->text('description')->nullable();
-            $table->boolean('enabled');
+            $table->boolean('enabled')->default(false);
             $table->timestamps();
         });
     }
