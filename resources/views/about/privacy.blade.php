@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('heading')
-    <h1 class="text-white">Privacy Policy</h1>
+    <h1>Privacy Policy</h1>
 @endsection
 
 @section('content')

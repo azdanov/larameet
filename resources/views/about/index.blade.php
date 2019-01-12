@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('heading')
-    <h1 class="text-white">About</h1>
+    <h1>About</h1>
 @endsection
 
 @section('content')

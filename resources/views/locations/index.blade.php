@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('heading')
-    <h1 class="text-white">Locations</h1>
+    <h1>Locations</h1>
 @endsection
 
 @section('content')

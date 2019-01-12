@@ -4,9 +4,9 @@
     /* @var string[] $events */
 @endphp
 
-
 @section('heading')
-    <h1 class="text-white">Events</h1>
+    <h1>Events</h1>
+    <p class="text-indigo-lightest">Find a suitable event to attend!</p>
 @endsection
 
 @section('content')
