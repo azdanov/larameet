@@ -14,15 +14,15 @@
 @include('partials._menu')
 
 <main class="flex-grow">
-    <div class="p-4 bg-indigo-light text-center shadow">
-        <div class="container mx-auto text-indigo-lightest">
+    <div class="pt-1 pb-3 bg-indigo-light text-center shadow">
+        <div class="container mx-auto text-white leading-normal">
             @section('heading')
-                <h1 class="text-white">LaraMeet</h1>
+                <h1>LaraMeet</h1>
             @show
         </div>
     </div>
 
-    <div class="container mx-auto">
+    <div class="container mx-auto py-3 leading-normal">
         @yield('content')
     </div>
 </main>
