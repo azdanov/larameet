@@ -8,9 +8,6 @@ use Illuminate\Support\Facades\Schema;
 
 final class CreateUsersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('users', static function (Blueprint $table): void {
@@ -24,9 +21,6 @@ final class CreateUsersTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('users');
