@@ -10,7 +10,15 @@
 @endsection
 
 @section('content')
-    <table>
-        @each('partials._row', $events, 'event')
-    </table>
+    <h2>Currently Open:</h2>
+    <ul class="list-reset">
+        @forelse ($events as $event)
+            <li>{{ $event->name }}</li>
+        @empty
+            <li>No events found!</li>
+        @endforelse
+    </ul>
+    <div class="mt-3 mb-1">
+        {!! $events->links('vendor.pagination.tailwind') !!}
+    </div>
 @endsection
