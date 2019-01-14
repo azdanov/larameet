@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @php
-    /* @var string[] $events */
+    /* @var App\Event[] $events */
 @endphp
 
 @section('heading')
@@ -13,7 +13,12 @@
     <h2>Currently Open:</h2>
     <ul class="list-reset">
         @forelse ($events as $event)
-            <li>{{ $event->name }}</li>
+            <li>
+                <a
+                    href="{{ route('events.show', $event->slug) }}"
+                    class="no-underline text-indigo-dark hover:underline"
+                >{{ $event->name }}</a>
+            </li>
         @empty
             <li>No events found!</li>
         @endforelse
