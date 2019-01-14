@@ -28,6 +28,7 @@ use function ucfirst;
  * @property int $published
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ * @property Carbon|null $start_at
  * @method static Builder|Event newModelQuery()
  * @method static Builder|Event newQuery()
  * @method static Builder|Event query()
@@ -49,7 +50,7 @@ final class Event extends Model
     use Sluggable;
 
     /** @var string[] */
-    protected $dates = ['created_at', 'updated_at', 'started_at'];
+    protected $dates = ['created_at', 'updated_at', 'start_at'];
 
     /** @return mixed[] */
     public function sluggable(): array
