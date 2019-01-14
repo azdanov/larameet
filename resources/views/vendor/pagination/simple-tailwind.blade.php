@@ -5,7 +5,7 @@
         @if ($paginator->onFirstPage())
             <li class="disabled">
                 <span
-                    class="border py-2 px-4 rounded-l text-indigo-light cursor-not-allowed shadow-inner">@lang('pagination.previous')</span>
+                    class="border py-2 px-4 rounded-l text-indigo-light cursor-not-allowed shadow-inner select-none">@lang('pagination.previous')</span>
             </li>
         @else
             <li>
@@ -24,7 +24,7 @@
         @else
             <li class="disabled ">
                 <span
-                    class="border border-l-0 py-2 px-4 rounded-r text-indigo-light cursor-not-allowed shadow-inner">@lang('pagination.next')</span>
+                    class="border border-l-0 py-2 px-4 rounded-r text-indigo-light cursor-not-allowed shadow-inner select-none">@lang('pagination.next')</span>
             </li>
         @endif
     </ul>
