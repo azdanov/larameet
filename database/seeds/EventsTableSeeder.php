@@ -21,6 +21,7 @@ final class EventsTableSeeder extends Seeder
                 'city' => $faker->city,
                 'description' => $faker->paragraphs(1, true),
                 'published' => $faker->boolean,
+                'start_at' => $faker->dateTimeBetween('+0 days', '+1 years'),
             ]);
         }
     }
