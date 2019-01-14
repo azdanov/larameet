@@ -14,7 +14,7 @@
             <h2>{{ $event->name }}</h2>
             <p>City: {{ $event->city }}</p>
             <p>Venue: {{ $event->venue }}</p>
-            <p>Status: {{ $event->enabled ? 'Open' : 'Closed' }}</p>
+            <p>Status: {{ $event->published ? 'Open' : 'Closed' }}</p>
         </section>
         <section>
             <h3>Description</h3>

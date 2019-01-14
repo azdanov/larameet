@@ -20,7 +20,7 @@ final class EventsTableSeeder extends Seeder
                 'venue' => $faker->company,
                 'city' => $faker->city,
                 'description' => $faker->paragraphs(1, true),
-                'enabled' => $faker->boolean,
+                'published' => $faker->boolean,
             ]);
         }
     }
