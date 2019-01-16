@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Event;
+use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\View\View;
 use function flash;
 use function redirect;
@@ -32,6 +32,7 @@ final class EventsController extends Controller
         $event = Event::create([$request->input()]);
 
         flash('Event created!')->success();
+
         return redirect()->route('events.show')->with('event', $event);
     }
 
@@ -40,30 +41,27 @@ final class EventsController extends Controller
         return view('events.show')->with('event', $event);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @return Response
-     */
-    public function edit(Event $event)
+    public function edit(Event $event): View
     {
+        return view('events.edit')->with('event', $event);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @return Response
-     */
-    public function update(Request $request, Event $event)
+    public function update(Request $request, Event $event): RedirectResponse
     {
+        $event->update($request->input());
+
+        flash('Event updated!')->success();
+
+        return redirect()->route('events.edit', $event);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @return Response
-     */
-    public function destroy(Event $event)
+    /** @throws Exception */
+    public function destroy(Event $event): RedirectResponse
     {
+        $event->delete();
+
+        flash('Event deleted!')->success();
+
+        return redirect()->route('events.index');
     }
 }
