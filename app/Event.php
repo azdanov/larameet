@@ -6,9 +6,10 @@ namespace App;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Eloquent;
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Carbon;
 use function explode;
 use function implode;
@@ -30,20 +31,30 @@ use function ucfirst;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property Carbon|null $start_at
- * @method static Builder|Event newModelQuery()
- * @method static Builder|Event newQuery()
- * @method static Builder|Event query()
- * @method static Builder|Event whereCity($value)
- * @method static Builder|Event whereCreatedAt($value)
- * @method static Builder|Event whereDescription($value)
- * @method static Builder|Event whereEnabled($value)
- * @method static Builder|Event whereId($value)
- * @method static Builder|Event whereName($value)
- * @method static Builder|Event whereUpdatedAt($value)
- * @method static Builder|Event whereVenue($value)
- * @method static Builder|Event findSimilarSlugs($attribute, $config, $slug)
- * @method static Builder|Event wherePublished($value)
- * @method static Builder|Event whereSlug($value)
+ * @property int $max_attendees
+ * @property string|null $deleted_at
+ * @method static EloquentBuilder|Event newModelQuery()
+ * @method static EloquentBuilder|Event newQuery()
+ * @method static EloquentBuilder|Event query()
+ * @method static EloquentBuilder|Event whereCity($value)
+ * @method static EloquentBuilder|Event whereCreatedAt($value)
+ * @method static EloquentBuilder|Event whereDescription($value)
+ * @method static EloquentBuilder|Event whereEnabled($value)
+ * @method static EloquentBuilder|Event whereId($value)
+ * @method static EloquentBuilder|Event whereName($value)
+ * @method static EloquentBuilder|Event whereUpdatedAt($value)
+ * @method static EloquentBuilder|Event whereVenue($value)
+ * @method static EloquentBuilder|Event findSimilarSlugs($attribute, $config, $slug)
+ * @method static EloquentBuilder|Event wherePublished($value)
+ * @method static EloquentBuilder|Event whereSlug($value)
+ * @method static bool|null forceDelete()
+ * @method static QueryBuilder|Event onlyTrashed()
+ * @method static bool|null restore()
+ * @method static EloquentBuilder|Event whereDeletedAt($value)
+ * @method static EloquentBuilder|Event whereMaxAttendees($value)
+ * @method static EloquentBuilder|Event whereStartAt($value)
+ * @method static QueryBuilder|Event withTrashed()
+ * @method static QueryBuilder|Event withoutTrashed()
  * @mixin Eloquent
  */
 final class Event extends Model
@@ -55,7 +66,7 @@ final class Event extends Model
     protected $fillable = ['name', 'venue', 'description', 'max_attendees'];
 
     /** @var string[] */
-    protected $dates = ['created_at', 'updated_at', 'start_at'];
+    protected $dates = ['created_at', 'updated_at', 'start_at', 'deleted_at'];
 
     /** @return mixed[] */
     public function sluggable(): array
@@ -71,7 +82,7 @@ final class Event extends Model
     public static function boot(): void
     {
         parent::boot();
-        static::addGlobalScope('published', static function (Builder $builder): void {
+        static::addGlobalScope('published', static function (EloquentBuilder $builder): void {
             $builder->where('published', '=', 1);
         });
     }
