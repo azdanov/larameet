@@ -14,10 +14,12 @@ Route::view('about/tos', 'about.tos')->name('about.tos');
 Route::view('contact', 'contact.index')->name('contact.index');
 
 Route::resource('events', 'EventsController')
-    ->only(['index', 'show'])
+    ->only(['index', 'show', 'create', 'store'])
     ->names([
         'index' => 'events.index',
         'show' => 'events.show',
+        'create' => 'events.create',
+        'store' => 'events.store',
     ]);
 
 Route::get('languages', 'LanguagesController@index')->name('languages.index');
