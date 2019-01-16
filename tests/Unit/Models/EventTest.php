@@ -26,6 +26,6 @@ final class EventTest extends TestCase
     {
         $event = factory(Event::class)->states('incorrect_capitalization')->make();
 
-        static::assertEquals($event->name, 'Hacking at Iot with Raspberry Pi');
+        static::assertSame($event->name, 'Hacking at Iot with Raspberry Pi');
     }
 }
