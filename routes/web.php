@@ -14,7 +14,7 @@ Route::view('about/tos', 'about.tos')->name('about.tos');
 Route::view('contact', 'contact.index')->name('contact.index');
 
 Route::resource('events', 'EventsController')
-    ->only(['index', 'show', 'create', 'store', 'edit', 'update'])
+    ->only(['index', 'show', 'create', 'store', 'edit', 'update', 'destroy'])
     ->names([
         'index' => 'events.index',
         'show' => 'events.show',
@@ -22,6 +22,7 @@ Route::resource('events', 'EventsController')
         'store' => 'events.store',
         'edit' => 'events.edit',
         'update' => 'events.update',
+        'destroy' => 'events.destroy',
     ]);
 
 Route::get('languages', 'LanguagesController@index')->name('languages.index');
