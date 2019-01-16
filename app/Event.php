@@ -8,6 +8,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use function explode;
 use function implode;
@@ -48,6 +49,10 @@ use function ucfirst;
 final class Event extends Model
 {
     use Sluggable;
+    use SoftDeletes;
+
+    /** @var string[] */
+    protected $fillable = ['name', 'venue', 'description', 'max_attendees'];
 
     /** @var string[] */
     protected $dates = ['created_at', 'updated_at', 'start_at'];
