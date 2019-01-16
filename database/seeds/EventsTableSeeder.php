@@ -19,6 +19,7 @@ final class EventsTableSeeder extends Seeder
                 'name' => $faker->catchPhrase,
                 'venue' => $faker->company,
                 'city' => $faker->city,
+                'max_attendees' => $faker->numberBetween(2, 10),
                 'description' => $faker->paragraphs(1, true),
                 'published' => $faker->boolean,
                 'start_at' => $faker->dateTimeBetween('+0 days', '+1 years'),

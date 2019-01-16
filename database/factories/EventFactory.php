@@ -13,6 +13,7 @@ $factory->define(App\Event::class, static function (Faker $faker) {
         'venue' => 'Pancake Town',
         'city' => 'Barcelona',
         'published' => 1,
+        'max_attendees' => 3,
         'description' => 'Gonna eat pancakes and learn Laravel!',
     ];
 });

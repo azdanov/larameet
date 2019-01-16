@@ -16,10 +16,12 @@ final class CreateEventsTable extends Migration
             $table->string('slug');
             $table->string('venue');
             $table->string('city');
+            $table->unsignedTinyInteger('max_attendees');
             $table->text('description')->nullable();
             $table->boolean('published')->default(false);
             $table->timestamp('start_at');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
