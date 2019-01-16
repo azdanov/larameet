@@ -12,9 +12,10 @@ require("laravel-mix-tailwind");
  |
  */
 
-mix.js("resources/js/app.js", "public/js")
-    .sass("resources/sass/app.scss", "public/css")
-    .tailwind();
+mix.js("resources/js/app.js", "public/js");
+mix.sass("resources/sass/app.scss", "public/css").tailwind();
+mix.version();
+
 /*
 |-----------------------------------------------------------------------
 | BrowserSync
@@ -23,11 +24,11 @@ mix.js("resources/js/app.js", "public/js")
 | BrowserSync refreshes the Browser if file changes (js, sass, php) are | detected.
 | Proxy specifies the location where the app is located.
 */
-mix.browserSync({
-    proxy: "http://larameet.test",
-    host: "localhost",
-    open: false,
-    watchOptions: {
-        usePolling: true
-    }
-});
+// mix.browserSync({
+//     proxy: "http://larameet.test",
+//     host: "localhost",
+//     open: false,
+//     watchOptions: {
+//         usePolling: true
+//     }
+// });
