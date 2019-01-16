@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Event;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
+use function flash;
+use function redirect;
 use function view;
 
 final class EventsController extends Controller
@@ -19,22 +22,17 @@ final class EventsController extends Controller
         return view('events.index')->with('events', $events);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
+    public function create(): View
     {
+        return view('events.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
+        $event = Event::create([$request->input()]);
+
+        flash('Event created!')->success();
+        return redirect()->route('events.show')->with('event', $event);
     }
 
     public function show(Event $event): View
