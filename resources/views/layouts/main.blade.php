@@ -13,6 +13,10 @@
 <body class="min-h-screen flex flex-col font-sans">
 @include('partials._menu')
 
+@php
+    /** @var Illuminate\Support\MessageBag $errors */
+@endphp
+
 <main class="flex-grow">
     <div class="pt-2 pb-3 bg-indigo-light text-center shadow">
         <div class="container mx-auto text-white leading-normal">
@@ -25,6 +29,16 @@
     @include('flash::message')
 
     <div class="container mx-auto py-3 leading-normal">
+        @if ($errors->isNotEmpty())
+            <div class="py-3 mx-auto bg-red-lighter md:w-3/4 sm:rounded">
+                <ul class="leading-normal ml-4">
+                    @foreach ($errors->all() as $error)
+                        <li class="text-red-darkest">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         @yield('content')
     </div>
 </main>

@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Http\Requests\EventRequest;
 use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 use function flash;
 use function redirect;
@@ -27,7 +30,7 @@ final class EventsController extends Controller
         return view('events.create');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(EventRequest $request): RedirectResponse
     {
         $event = Event::create([$request->input()]);
 
@@ -46,7 +49,7 @@ final class EventsController extends Controller
         return view('events.edit')->with('event', $event);
     }
 
-    public function update(Request $request, Event $event): RedirectResponse
+    public function update(EventRequest $request, Event $event): RedirectResponse
     {
         $event->update($request->input());
 

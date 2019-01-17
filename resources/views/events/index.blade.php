@@ -11,7 +11,11 @@
 
 @section('content')
     <article class="lg:w-5/6 mx-auto">
-        <h2 class="mb-2">Currently Open</h2>
+        <div class="flex items-baseline mb-4 text-green-darkest">
+            <h2>Currently Open</h2>
+            <span class="mx-2">&dash;</span>
+            {{ link_to_route('events.create', 'Create an Event', [], ['class' => 'no-underline text-indigo-dark hover:underline']) }}
+        </div>
         <ul class="list-reset flex flex-wrap">
             @forelse ($events as $event)
                 <li class="mb-4 md:w-1/2">
@@ -31,7 +35,7 @@
                 <li>No events found!</li>
             @endforelse
         </ul>
-        <div class="mt-1 mb-1">
+        <div class="my-2">
             {!! $events->links('vendor.pagination.tailwind') !!}
         </div>
     </article>

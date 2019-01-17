@@ -20,12 +20,12 @@
         <div class="md:flex md:items-center mb-4">
             <div class="md:w-1/3">
                 {!!Form::label('name', 'Event Name', [
-                    'class' => 'block text-grey-dark font-bold md:text-right mb-1 md:mb-0 pr-4' ])
+                    'class' => 'block text-grey-dark font-bold md:text-right mb-1 md:mb-0 pr-4' . ($errors->first('name') ? ' text-red-light' : '') ])
                 !!}
             </div>
             <div class="md:w-2/3">
                 {!! Form::text('name', $event->name, [
-                    'class' => 'bg-grey-lightest appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-indigo',
+                    'class' => 'bg-grey-lightest appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-indigo' . ($errors->first('name') ? ' border-red-light' : ''),
                     'placeholder' => 'Laravel and Pancakes' ])
                 !!}
             </div>
@@ -33,25 +33,25 @@
         <div class="md:flex md:items-center mb-4">
             <div class="md:w-1/3">
                 {!! Form::label('max_attendees', 'Maximum Number of Attendees (including organizers)', [
-                    'class' => 'block text-grey-dark font-bold md:text-right mb-1 md:mb-0 pr-4'])
+                    'class' => 'block text-grey-dark font-bold md:text-right mb-1 md:mb-0 pr-4'  . ($errors->first('max_attendees') ? ' text-red-light' : '')])
                 !!}
             </div>
             <div class="md:w-2/3">
                 {!! Form::select('max_attendees', [2,3,4,5,6,7,8,9,10], $event->max_attendees, [
                     'placeholder' => 'Maximum Number of Attendees',
-                    'class' => 'bg-grey-lightest appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-indigo' ])
+                    'class' => 'bg-grey-lightest appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-indigo'  . ($errors->first('max_attendees') ? ' border-red-light' : '') ])
                 !!}
             </div>
         </div>
         <div class="md:flex md:items-center mb-4">
             <div class="md:w-1/3">
                 {!!Form::label('venue', 'Venue', [
-                    'class' => 'block text-grey-dark font-bold md:text-right mb-1 md:mb-0 pr-4' ])
+                    'class' => 'block text-grey-dark font-bold md:text-right mb-1 md:mb-0 pr-4'  . ($errors->first('venue') ? ' text-red-light' : '') ])
                 !!}
             </div>
             <div class="md:w-2/3">
                 {!! Form::text('venue', $event->venue, [
-                    'class' => 'bg-grey-lightest appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-indigo',
+                    'class' => 'bg-grey-lightest appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-indigo'  . ($errors->first('venue') ? ' border-red-light' : ''),
                     'placeholder' => 'Pancakes and Stars Cafe' ])
                 !!}
             </div>
@@ -59,13 +59,13 @@
         <div class="md:flex md:items-center mb-5">
             <div class="md:w-1/3">
                 {!! Form::label('description', 'Description', [
-                    'class' => 'block text-grey-dark font-bold md:text-right mb-1 md:mb-0 pr-4'])
+                    'class' => 'block text-grey-dark font-bold md:text-right mb-1 md:mb-0 pr-4'  . ($errors->first('description') ? ' text-red-light' : '')])
                 !!}
             </div>
             <div class="md:w-2/3">
-                {!!Form::textarea('description', $event->description, [
+                {!! Form::textarea('description', $event->description, [
                     'placeholder' => 'Describe the event',
-                    'class' => 'bg-grey-lightest appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-indigo',
+                    'class' => 'bg-grey-lightest appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-indigo'  . ($errors->first('description') ? ' border-red-light' : ''),
                     'rows' => '4' ])
                 !!}
             </div>
