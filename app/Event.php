@@ -7,7 +7,10 @@ namespace App;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Carbon;
@@ -33,6 +36,9 @@ use function ucfirst;
  * @property Carbon|null $start_at
  * @property int $max_attendees
  * @property string|null $deleted_at
+ * @property int|null $state_id
+ * @property int|null $city_id
+ * @property Collection|User[] $users
  * @method static EloquentBuilder|Event newModelQuery()
  * @method static EloquentBuilder|Event newQuery()
  * @method static EloquentBuilder|Event query()
@@ -55,6 +61,8 @@ use function ucfirst;
  * @method static EloquentBuilder|Event whereStartAt($value)
  * @method static QueryBuilder|Event withTrashed()
  * @method static QueryBuilder|Event withoutTrashed()
+ * @method static EloquentBuilder|Event whereCityId($value)
+ * @method static EloquentBuilder|Event whereStateId($value)
  * @mixin Eloquent
  */
 final class Event extends Model
@@ -77,6 +85,16 @@ final class Event extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class)->withPivot('comment')->withTimestamps();
     }
 
     public static function boot(): void
