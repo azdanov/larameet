@@ -20,6 +20,7 @@
         "barryvdh/laravel-cors": "^0.11.2",
         "barryvdh/laravel-ide-helper": "^2.5",
         "beyondcode/laravel-dump-server": "^1.0",
+        "beyondcode/laravel-query-detector": "^1.0",
         "beyondcode/laravel-self-diagnosis": "^1.0",
         "doctrine/dbal": "^2.9",
         "filp/whoops": "^2.0",

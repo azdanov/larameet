@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.7.21 on 2019-01-16 17:15:12.
+ * Generated for Laravel 5.7.21 on 2019-01-19 06:46:00.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -7523,7 +7523,6 @@ namespace Illuminate\Support\Facades {
      * 
      *
      * @see \Illuminate\Http\Request
-     */
      */ 
     class Request {
         

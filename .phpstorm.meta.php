@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2019-01-16 17:15:13.
+    * Generated on 2019-01-19 06:46:00.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13,6 +13,7 @@ namespace PHPSTORM_META {
     override(new \Illuminate\Contracts\Container\Container, map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\QueryDetector\QueryDetector' => \BeyondCode\QueryDetector\QueryDetector::class,
         'Cviebrock\EloquentSluggable\SluggableObserver' => \Cviebrock\EloquentSluggable\SluggableObserver::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -162,6 +163,7 @@ namespace PHPSTORM_META {
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\QueryDetector\QueryDetector' => \BeyondCode\QueryDetector\QueryDetector::class,
         'Cviebrock\EloquentSluggable\SluggableObserver' => \Cviebrock\EloquentSluggable\SluggableObserver::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -311,6 +313,7 @@ namespace PHPSTORM_META {
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\QueryDetector\QueryDetector' => \BeyondCode\QueryDetector\QueryDetector::class,
         'Cviebrock\EloquentSluggable\SluggableObserver' => \Cviebrock\EloquentSluggable\SluggableObserver::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -460,6 +463,7 @@ namespace PHPSTORM_META {
     override(\App::make(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\QueryDetector\QueryDetector' => \BeyondCode\QueryDetector\QueryDetector::class,
         'Cviebrock\EloquentSluggable\SluggableObserver' => \Cviebrock\EloquentSluggable\SluggableObserver::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -609,6 +613,7 @@ namespace PHPSTORM_META {
     override(\App::makeWith(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\QueryDetector\QueryDetector' => \BeyondCode\QueryDetector\QueryDetector::class,
         'Cviebrock\EloquentSluggable\SluggableObserver' => \Cviebrock\EloquentSluggable\SluggableObserver::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -758,6 +763,7 @@ namespace PHPSTORM_META {
     override(\app(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\QueryDetector\QueryDetector' => \BeyondCode\QueryDetector\QueryDetector::class,
         'Cviebrock\EloquentSluggable\SluggableObserver' => \Cviebrock\EloquentSluggable\SluggableObserver::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -907,6 +913,7 @@ namespace PHPSTORM_META {
     override(\resolve(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\QueryDetector\QueryDetector' => \BeyondCode\QueryDetector\QueryDetector::class,
         'Cviebrock\EloquentSluggable\SluggableObserver' => \Cviebrock\EloquentSluggable\SluggableObserver::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
