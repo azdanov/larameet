@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.7.21 on 2019-01-19 06:46:00.
+ * Generated for Laravel 5.7.21 on 2019-01-19 08:01:34.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -14099,6 +14099,16 @@ namespace Collective\Html {
         {
             return \Collective\Html\FormBuilder::componentCall($method, $parameters);
         }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function captcha($attributes = array())
+        {
+            return \Collective\Html\FormBuilder::captcha($attributes);
+        }
          
     }
 
@@ -14499,6 +14509,108 @@ namespace Collective\Html {
         public static function componentCall($method, $parameters)
         {
             return \Collective\Html\HtmlBuilder::componentCall($method, $parameters);
+        }
+         
+    }
+ 
+}
+
+namespace Anhskohbo\NoCaptcha\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class NoCaptcha {
+        
+        /**
+         * Render HTML captcha.
+         *
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */ 
+        public static function display($attributes = array())
+        {
+            return \Anhskohbo\NoCaptcha\NoCaptcha::display($attributes);
+        }
+        
+        /**
+         * 
+         *
+         * @see display()
+         * @static 
+         */ 
+        public static function displayWidget($attributes = array())
+        {
+            return \Anhskohbo\NoCaptcha\NoCaptcha::displayWidget($attributes);
+        }
+        
+        /**
+         * Display a Invisible reCAPTCHA by embedding a callback into a form submit button.
+         *
+         * @param string $formIdentifier the html ID of the form that should be submitted.
+         * @param string $text the text inside the form button
+         * @param array $attributes array of additional html elements
+         * @return string 
+         * @static 
+         */ 
+        public static function displaySubmit($formIdentifier, $text = 'submit', $attributes = array())
+        {
+            return \Anhskohbo\NoCaptcha\NoCaptcha::displaySubmit($formIdentifier, $text, $attributes);
+        }
+        
+        /**
+         * Render js source
+         *
+         * @param null $lang
+         * @param bool $callback
+         * @param string $onLoadClass
+         * @return string 
+         * @static 
+         */ 
+        public static function renderJs($lang = null, $callback = false, $onLoadClass = 'onloadCallBack')
+        {
+            return \Anhskohbo\NoCaptcha\NoCaptcha::renderJs($lang, $callback, $onLoadClass);
+        }
+        
+        /**
+         * Verify no-captcha response.
+         *
+         * @param string $response
+         * @param string $clientIp
+         * @return bool 
+         * @static 
+         */ 
+        public static function verifyResponse($response, $clientIp = null)
+        {
+            return \Anhskohbo\NoCaptcha\NoCaptcha::verifyResponse($response, $clientIp);
+        }
+        
+        /**
+         * Verify no-captcha response by Symfony Request.
+         *
+         * @param \Request $request
+         * @return bool 
+         * @static 
+         */ 
+        public static function verifyRequest($request)
+        {
+            return \Anhskohbo\NoCaptcha\NoCaptcha::verifyRequest($request);
+        }
+        
+        /**
+         * Get recaptcha js link.
+         *
+         * @param string $lang
+         * @param boolean $callback
+         * @param string $onLoadClass
+         * @return string 
+         * @static 
+         */ 
+        public static function getJsLink($lang = null, $callback = false, $onLoadClass = 'onloadCallBack')
+        {
+            return \Anhskohbo\NoCaptcha\NoCaptcha::getJsLink($lang, $callback, $onLoadClass);
         }
          
     }
@@ -17046,6 +17158,8 @@ namespace  {
     class Validator extends \Illuminate\Support\Facades\Validator {}
 
     class View extends \Illuminate\Support\Facades\View {}
+
+    class NoCaptcha extends \Anhskohbo\NoCaptcha\Facades\NoCaptcha {}
 
     class Flash extends \Laracasts\Flash\Flash {}
  

@@ -8,7 +8,7 @@
     <div class="flex flex-wrap justify-around">
         <div class="px-4 w-full md:w-2/3 my-3">
             <h2 class="text-grey-darkest text-center mb-4">Contact Us</h2>
-            {!! Form::open(['route' => 'contact.store']) !!}
+            {!! Form::open(['route' => 'contact.store', 'id' => 'contact-form']) !!}
             <div class="md:flex md:items-center mb-5">
                 <div class="md:w-1/3">
                     {!! Form::label('name', 'Name', [
@@ -43,7 +43,7 @@
             <div class="md:flex md:items-center">
                 <div class="md:w-1/3"></div>
                 <div class="md:w-2/3">
-                    {!! Form::submit('Send', ['class' => 'shadow bg-indigo hover:bg-indigo-light focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded']) !!}
+                    {!! NoCaptcha::displaySubmit('contact-form', 'Submit!', ['class' => 'shadow bg-indigo hover:bg-indigo-light focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded']) !!}
                 </div>
             </div>
             {!! Form::close() !!}
@@ -59,3 +59,5 @@
         </div>
     </div>
 @endsection
+
+{!! NoCaptcha::renderJs() !!}
