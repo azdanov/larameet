@@ -21,7 +21,7 @@
                        class="hover:text-white text-indigo-lightest no-underline">About LaraMeet</a>
                 </li>
                 <li>
-                    <a href="{{ route('contact.index') }}"
+                    <a href="{{ route('contact.create') }}"
                        class="hover:text-white text-indigo-lightest no-underline">Contact Us</a>
                 </li>
             </ul>
@@ -34,7 +34,7 @@
                        class="hover:text-white text-indigo-lightest no-underline">F.A.Q.</a>
                 </li>
                 <li>
-                    <a href="{{ route('contact.index') }}"
+                    <a href="{{ route('contact.create') }}"
                        class="hover:text-white text-indigo-lightest no-underline">Contact
                         Support</a>
                 </li>

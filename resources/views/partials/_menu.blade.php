@@ -22,7 +22,7 @@
             </a><a href="{{ route('about.index') }}"
                    class="block mt-4 md:inline-block md:mt-0 text-indigo-lightest hover:text-white hover:underline mr-4{{ Route::currentRouteName() === 'about.index' ? ' underline' : ' no-underline' }}">
                 About
-            </a><a href="{{ route('contact.index') }}"
+            </a><a href="{{ route('contact.create') }}"
                    class="block mt-4 md:inline-block md:mt-0 text-indigo-lightest hover:text-white hover:underline{{ Route::currentRouteName() === 'contact.index' ? ' underline' : ' no-underline' }}">
                 Contact</a
             ></div>

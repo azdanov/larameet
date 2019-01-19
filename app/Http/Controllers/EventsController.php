@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Event;
-use App\Http\Requests\EventRequest;
+use App\Http\Requests\EventFormRequest;
 use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -30,7 +30,7 @@ final class EventsController extends Controller
         return view('events.create');
     }
 
-    public function store(EventRequest $request): RedirectResponse
+    public function store(EventFormRequest $request): RedirectResponse
     {
         $event = Event::create([$request->input()]);
 
@@ -49,7 +49,7 @@ final class EventsController extends Controller
         return view('events.edit')->with('event', $event);
     }
 
-    public function update(EventRequest $request, Event $event): RedirectResponse
+    public function update(EventFormRequest $request, Event $event): RedirectResponse
     {
         $event->update($request->input());
 
