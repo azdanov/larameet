@@ -29,6 +29,9 @@ use Illuminate\Support\Carbon;
  * @property DatabaseNotification[]|DatabaseNotificationCollection $notifications
  * @property Profile $profile
  * @property Collection|Event[] $events
+ * @property string|null $provider
+ * @property int|null $provider_id
+ * @property string|null $handle_github
  * @method static Builder|User newModelQuery()
  * @method static Builder|User newQuery()
  * @method static Builder|User query()
@@ -40,6 +43,9 @@ use Illuminate\Support\Carbon;
  * @method static Builder|User wherePassword($value)
  * @method static Builder|User whereRememberToken($value)
  * @method static Builder|User whereUpdatedAt($value)
+ * @method static Builder|User whereHandleGithub($value)
+ * @method static Builder|User whereProvider($value)
+ * @method static Builder|User whereProviderId($value)
  * @mixin Eloquent
  */
 final class User extends Authenticatable

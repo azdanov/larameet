@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 Auth::routes();
 
+Route::get('login/github', 'Auth\SocialGitHubController@redirectToProvider')->name('login.github');
+Route::get('login/github/callback', 'Auth\SocialGitHubController@handleProviderCallback')->name(
+    'login.github.callback'
+);
+
 Route::get('/', 'WelcomeController@index')->name('welcome.index');
 
 Route::view('about', 'about.index')->name('about.index');
