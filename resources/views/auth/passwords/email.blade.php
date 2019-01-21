@@ -1,24 +1,38 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="w-full flex justify-center my-6">
-        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex-grow max-w-xs" method="POST" action="{{ route('password.email') }}">
-            @csrf
-            <h2 class="mb-2 text-grey-darker">Reset Password</h2>
-            <div class="mb-4">
-                <label class="block text-grey-darker text-sm font-bold mb-2" for="email">
-                    Email
-                </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline{{$errors->has('email') ? ' border-red mb-2' : ''}}"
-                       id="email" type="email" name="email" placeholder="Email"
-                       value="{{ old('email') }}" required>
-                @if ($errors->has('email'))
-                    <p class="text-red text-xs italic" role="alert">{{ $errors->first('email') }}</p>
-                @endif
+    <div class="px-4 md:px-0 md:w-3/5 lg:w-2/5 mx-auto my-3 mb-5">
+        {!! Form::open(['route' => 'password.email']) !!}
+        <div class="md:flex md:items-center mb-1">
+            <div class="md:w-1/3"></div>
+            <div class="md:w-2/3">
+                <div class="flex justify-center md:justify-start items-center mb-3 text-grey-darker">
+                    <h2>Send Reset Email</h2>
+                </div>
             </div>
-            <button class="bg-indigo text-white font-bold py-2 px-4 rounded shadow-1 w-full" type="submit">
-                Send Password Reset Link
-            </button>
-        </form>
+        </div>
+        <div class="md:flex md:items-center mb-5">
+            <div class="md:w-1/3">
+                {!!Form::label('email', 'Email', [
+                    'class' => 'block text-grey-dark font-bold md:text-right mb-1 md:mb-0 pr-4' . ($errors->first('email') ? ' text-red-light' : '') ])
+                !!}
+            </div>
+            <div class="md:w-2/3">
+                {!! Form::email('email', null, [
+                    'class' => 'bg-grey-lightest appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-indigo' . ($errors->first('email') ? ' border-red-light' : ''),
+                    'placeholder' => 'user@example.com' ])
+                !!}
+            </div>
+        </div>
+        <div class="md:flex md:items-center">
+            <div class="md:w-1/3"></div>
+            <div class="md:w-2/3">
+                {!! Form::button('Send', [
+                    'class' => 'shadow bg-indigo hover:bg-indigo-light focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded',
+                    'type' => 'submit' ])
+                !!}
+            </div>
+        </div>
+        {!! Form::close() !!}
     </div>
 @endsection

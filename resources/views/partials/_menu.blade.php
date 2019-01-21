@@ -1,5 +1,5 @@
 <nav class="flex items-center justify-between flex-wrap bg-indigo p-4 shadow">
-    <a href="{{ route('welcome') }}"
+    <a href="{{ route('welcome.index') }}"
        class="flex items-center flex-no-shrink text-white mr-6 no-underline">
         <svg class="mr-1 w-8 h-8" viewBox="0 0 24 24">
             <path fill="currentColor"
@@ -27,10 +27,21 @@
                 Contact</a
             ></div>
         <div>
-            <a href="{{ route('login') }}"
-               class="inline-block text-md px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-indigo hover:bg-white mt-4 md:mt-0 no-underline">
-                Login
-            </a>
+            @if (Auth::guest())
+                <a href="{{ route('login') }}"
+                   class="inline-block text-md px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-indigo hover:bg-white mt-4 md:mt-0 no-underline">
+                    Login
+                </a>
+            @else
+                <a href="{{ route('logout') }}"
+                   class="inline-block text-md px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-indigo hover:bg-white mt-4 md:mt-0 no-underline"
+                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                    @csrf
+                </form>
+            @endif
         </div>
     </div>
 </nav>

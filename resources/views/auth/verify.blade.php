@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+{{-- TODO: Update styles if email verification is implemented --}}
 @section('content')
     <h2>Verify Your Email Address</h2>
 
