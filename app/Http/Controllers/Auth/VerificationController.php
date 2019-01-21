@@ -6,16 +6,18 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
+use function route;
 
 final class VerificationController extends Controller
 {
     use VerifiesEmails;
 
     /** @var string */
-    protected $redirectTo = '/home';
+    protected $redirectTo;
 
     public function __construct()
     {
+        $this->redirectTo = route('welcome.index');
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');

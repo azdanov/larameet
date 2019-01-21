@@ -8,6 +8,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use function redirect;
+use function route;
 
 final class RedirectIfAuthenticated
 {
@@ -19,7 +20,7 @@ final class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next, ?string $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            return redirect(route('welcome.index'));
         }
 
         return $next($request);
