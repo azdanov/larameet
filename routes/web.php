@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 Auth::routes();
 
-Route::get('/', 'WelcomeController@index')->name('welcome');
+Route::get('/', 'WelcomeController@index')->name('welcome.index');
 
 Route::view('about', 'about.index')->name('about.index');
 Route::view('about/faq', 'about.faq')->name('about.faq');
