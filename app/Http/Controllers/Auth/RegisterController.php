@@ -59,6 +59,7 @@ final class RegisterController extends Controller
     protected function registered(): RedirectResponse
     {
         flash('You have registered successfully!')->success();
+
         return redirect($this->redirectPath());
     }
 }

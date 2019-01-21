@@ -7,8 +7,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactFormRequest;
 use App\Mail\ContactEmail;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
-use Mail;
 use function flash;
 use function redirect;
 use function view;
@@ -30,6 +30,7 @@ final class ContactController extends Controller
         Mail::to($contact['email'])->send(new ContactEmail($contact));
 
         flash('Your message has been sent!')->success();
+
         return redirect()->route('contact.create');
     }
 }
