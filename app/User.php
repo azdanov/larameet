@@ -32,6 +32,7 @@ use Illuminate\Support\Carbon;
  * @property string|null $provider
  * @property int|null $provider_id
  * @property string|null $handle_github
+ * @property int $is_admin
  * @method static Builder|User newModelQuery()
  * @method static Builder|User newQuery()
  * @method static Builder|User query()
@@ -46,6 +47,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|User whereHandleGithub($value)
  * @method static Builder|User whereProvider($value)
  * @method static Builder|User whereProviderId($value)
+ * @method static Builder|User whereIsAdmin($value)
  * @mixin Eloquent
  */
 final class User extends Authenticatable

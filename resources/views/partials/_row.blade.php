@@ -1,5 +1,5 @@
 <tr>
-    <td>
-        {{ $event }}
-    </td>
+  <td>
+    {{ $event }}
+  </td>
 </tr>

@@ -1,8 +1,8 @@
 @component('mail::message')
-# A message from {{ $contact['name'] }} __({{ $contact['email'] }})__
+  # A message from {{ $contact['name'] }} __({{ $contact['email'] }})__
 
-{{ $contact['message'] }}
+  {{ $contact['message'] }}
 
-Thanks,<br>
-{{ config('app.name') }}
+  Thanks,<br>
+  {{ config('app.name') }}
 @endcomponent

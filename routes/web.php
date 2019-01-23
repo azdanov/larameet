@@ -34,3 +34,16 @@ Route::post('contact', 'ContactController@store')->name('contact.store');
 Route::get('languages', 'LanguagesController@index')->name('languages.index');
 Route::get('locations', 'LocationsController@index')->name('locations.index');
 Route::get('map', 'MapsController@index')->name('maps.index');
+
+Route::group(
+    [
+        'prefix' => 'admin',
+        'namespace' => 'Admin',
+        'middleware' => 'admin',
+    ],
+    static function (): void {
+        Route::resource('users', 'UsersController')
+            ->only(['index'])
+            ->names(['index' => 'admin.users.index']);
+    }
+);

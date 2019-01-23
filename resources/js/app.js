@@ -1,1 +1,2 @@
-require("./flash");
+import "./flash";
+import "./vue";
